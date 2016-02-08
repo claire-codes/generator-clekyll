@@ -1,0 +1,2 @@
+<h2>Post title should be here</h2>
+<%= postTitle %>
