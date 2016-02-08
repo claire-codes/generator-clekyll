@@ -1,5 +1,8 @@
 # generator-clekyll [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Generate Jekyll blog post outline
+
+My First Yeoman Generator :rainbow:
+
+Creates the skeleton of a Jekyll blog post in the style that I use in my blog.> Generate Jekyll blog post outline
 
 ## Installation
 
