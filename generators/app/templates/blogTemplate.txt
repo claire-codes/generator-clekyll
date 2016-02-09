@@ -1,0 +1,9 @@
+---
+layout: post
+title: <%= postTitle %>
+date: 2015-09-01 23:00:16 +0100
+comments: <%= comments %>
+published: <%= published %>
+---
+
+<h1>Your blog post goes here</h1>

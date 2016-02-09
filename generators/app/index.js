@@ -7,7 +7,6 @@ module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
     this.log(yosay(
       'Welcome to the cool ' + chalk.red('generator-clekyll') + ' generator!'
     ));
@@ -16,11 +15,18 @@ module.exports = yeoman.generators.Base.extend({
       type: 'input',
       name: 'postTitle',
       message: 'What\'s the title of the post?'
+    }, {
+      type: 'confirm',
+      name: 'published',
+      message: 'Only a draft?'
+    }, {
+      type: 'confirm',
+      name: 'comments',
+      message: 'Enable comments?'
     }];
 
     this.prompt(prompts, function (props) {
       this.props = props;
-      // To access props later use this.props.someOption;
 
       done();
     }.bind(this));
@@ -28,9 +34,12 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   writing: function () {
-    this.fs.copy(
+    this.fs.copyTpl(
       this.templatePath('dummyfile.txt'),
-      this.destinationPath(this.props.postTitle + 'dummyfile.txt')
+      this.destinationPath(this.props.postTitle + 'dummyfile.txt'),
+      {postTitle: this.props.postTitle,
+        published: !(this.props.published),
+        comments: this.props.comments}
     );
     this.log(this.props.postTitle + ' is a stupid title');
 
@@ -38,5 +47,5 @@ module.exports = yeoman.generators.Base.extend({
   //
   // install: function () {
   //   this.installDependencies();
-  }
+}
 });
