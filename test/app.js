@@ -6,14 +6,14 @@ var helpers = require('yeoman-generator').test;
 describe('generator-clekyll:app', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/app'))
-      .withOptions({someOption: true})
-      .withPrompts({someAnswer: true})
+      .withPrompts({postTitle: 'bananas', published: true, comments: true})
       .on('end', done);
   });
 
-  it('creates files', function () {
+  it('creates a file', function () {
+    var d = (new Date()).toISOString().slice(0, 10);
     assert.file([
-      'dummyfile.txt'
+      d + '-bananas.markdown'
     ]);
   });
 });
