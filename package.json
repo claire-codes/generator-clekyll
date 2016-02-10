@@ -7,7 +7,8 @@
     "email": "claire.parker87@gmail.com"
   },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
   "files": [
     "generators"
@@ -17,12 +18,14 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.21.1",
+    "yeoman-generator": "^0.22.5",
     "chalk": "^1.0.0",
     "yosay": "^1.0.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "coveralls": "^2.11.6",
+    "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
     "yeoman-assert": "^2.0.0"
   },
