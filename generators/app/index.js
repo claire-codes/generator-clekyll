@@ -29,7 +29,6 @@ module.exports = yeoman.generators.Base.extend({
       this.props = props;
       done();
     }.bind(this));
-
   },
 
   writing: function () {
@@ -45,15 +44,14 @@ module.exports = yeoman.generators.Base.extend({
       }
     );
     this.log(this.props.postTitle + ' is a stupid title');
-
   },
 
-  _getPostDateTime: function() {
-    return (new Date()).toISOString().slice(0,10) + ' ' + (new Date()).toISOString().slice(11,19);
+  _getPostDateTime: function () {
+    return (new Date()).toISOString().slice(0, 10) + ' ' + (new Date()).toISOString().slice(11, 19);
   },
 
-  _toUrl: function(str) {
-    var today = (new Date()).toISOString().slice(0,10);
+  _toUrl: function (str) {
+    var today = (new Date()).toISOString().slice(0, 10);
     return today + '-' + str.replace(' ', '-').toLowerCase() + '.markdown';
   }
 });
