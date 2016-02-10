@@ -1,7 +1,7 @@
 ---
 layout: post
 title: <%= postTitle %>
-date: 2015-09-01 23:00:16 +0100
+date: <%= postDateTime %>
 comments: <%= comments %>
 published: <%= published %>
 ---

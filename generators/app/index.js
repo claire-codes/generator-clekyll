@@ -27,25 +27,33 @@ module.exports = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function (props) {
       this.props = props;
-
       done();
     }.bind(this));
 
   },
 
   writing: function () {
+    var postDateTime = this._getPostDateTime();
     this.fs.copyTpl(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath(this.props.postTitle + 'dummyfile.txt'),
-      {postTitle: this.props.postTitle,
+      this.templatePath('blogTemplate.txt'),
+      this.destinationPath(this._toUrl(this.props.postTitle)),
+      {
+        postTitle: this.props.postTitle,
+        postDateTime: postDateTime,
         published: !(this.props.published),
-        comments: this.props.comments}
+        comments: this.props.comments
+      }
     );
     this.log(this.props.postTitle + ' is a stupid title');
 
-  // },
-  //
-  // install: function () {
-  //   this.installDependencies();
-}
+  },
+
+  _getPostDateTime: function() {
+    return (new Date()).toISOString().slice(0,10) + ' ' + (new Date()).toISOString().slice(11,19);
+  },
+
+  _toUrl: function(str) {
+    var today = (new Date()).toISOString().slice(0,10);
+    return today + '-' + str.replace(' ', '-').toLowerCase() + '.markdown';
+  }
 });
