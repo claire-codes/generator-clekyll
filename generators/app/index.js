@@ -1,7 +1,9 @@
 'use strict';
+
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var c = require('clairity');
 
 module.exports = yeoman.Base.extend({
   prompting: function () {
@@ -50,8 +52,11 @@ module.exports = yeoman.Base.extend({
     return (new Date()).toISOString().slice(0, 10) + ' ' + (new Date()).toISOString().slice(11, 19);
   },
 
+  _getPostDate: function() {
+    return (new Date()).toISOString().slice(0, 10);
+  },
+
   _toUrl: function (str) {
-    var today = (new Date()).toISOString().slice(0, 10);
-    return today + '-' + str.replace(' ', '-').toLowerCase() + '.markdown';
+    return this._getPostDate() + '-' + c.replaceWhitespace(str, '-').toLowerCase() + '.markdown';
   }
 });
