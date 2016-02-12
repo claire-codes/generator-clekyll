@@ -19,4 +19,10 @@ describe('generator-clekyll:app', function() {
       /layout: post\ntitle: Bananas and Cucumbers\ndate: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\ncomments: true\npublished: false/
     );
   });
+
+  it('does yo-rc.json stuff', function() {
+    assert.file([
+      '.yo-rc.json'
+    ]);
+  });
 });

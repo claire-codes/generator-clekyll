@@ -1,27 +1,47 @@
 # generator-clekyll [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
-My First Yeoman Generator :rainbow:
+_My First Yeoman Generator_ :rainbow:
 
-Creates the skeleton of a Jekyll blog post in the style that I use in my blog.> Generate Jekyll blog post outline
+Creates the skeleton of a Jekyll blog post in the style that I use in my blog.
+
+### Example
+
+For a blog post called 'Bish Bash Bosh' you'd get something like:
+
+Filename: `2016-02-12-bish-bash-bosh.markdown`
+
+```
+---
+layout: post
+title: Bish Bash Bosh
+date: 2016-02-12 23:17:42
+comments: true
+published: false
+---
+
+<h1>Your blog post goes here</h1>
+```
 
 ## Installation
-
-First, install [Yeoman](http://yeoman.io) and generator-clekyll using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
 npm install -g generator-clekyll
 ```
 
-Then generate your new project:
+Run the generator.
 
 ```bash
 yo clekyll
 ```
 
+It will create the file in the current directory.
+
+*To-Do:* Check for `yo-rc.json` existence and create in `/_posts` if it exists.
+
 ## Getting To Know Yeoman
 
-Yeoman has a heart of gold. He&#39;s a person with feelings and opinions, but he&#39;s very easy to work with. If you think he&#39;s too opinionated, he can be easily convinced. Feel free to [learn more about him](http://yeoman.io/).
+Yeoman is a secretive knobhead as evidenced by the sparse and disorganised documentation for him online. Don't trust a word he says. Feel free to [learn more about him](http://yeoman.io/).
 
 ## License
 

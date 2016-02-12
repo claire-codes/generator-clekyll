@@ -7,6 +7,7 @@ var c = require('clairity');
 
 module.exports = yeoman.Base.extend({
   prompting: function () {
+    this.config.save();
     var done = this.async();
 
     this.log(yosay(
@@ -45,7 +46,6 @@ module.exports = yeoman.Base.extend({
         comments: this.props.comments
       }
     );
-    this.log(this.props.postTitle + ' is a stupid title');
   },
 
   _getPostDateTime: function () {
