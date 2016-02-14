@@ -17,9 +17,10 @@ title: Bish Bash Bosh
 date: 2016-02-12 23:17:42
 comments: true
 published: false
+categories:
 ---
 
-<h1>Your blog post goes here</h1>
+# Your blog post goes here
 ```
 
 ## Installation

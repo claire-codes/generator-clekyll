@@ -4,6 +4,7 @@ title: <%= postTitle %>
 date: <%= postDateTime %>
 comments: <%= comments %>
 published: <%= published %>
+categories:
 ---
 
-<h1>Your blog post goes here</h1>
+# Your blog post goes here
