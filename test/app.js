@@ -16,7 +16,7 @@ describe('generator-clekyll:app', function() {
       d + '-bananas-and-cucumbers.markdown'
     ]);
     assert.fileContent(d + '-bananas-and-cucumbers.markdown',
-      /layout: post\ntitle: Bananas and Cucumbers\ndate: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\ncomments: true\npublished: false/
+      /---\nlayout: post\ntitle: Bananas and Cucumbers\ndate: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\ncomments: true\npublished: false\ncategories:\n---\n/
     );
   });
 

@@ -37,7 +37,7 @@ module.exports = yeoman.Base.extend({
   writing: function () {
     var postDateTime = this._getPostDateTime();
     this.fs.copyTpl(
-      this.templatePath('blogTemplate.txt'),
+      this.templatePath('blogTemplate.markdown'),
       this.destinationPath(this._toUrl(this.props.postTitle)),
       {
         postTitle: this.props.postTitle,
