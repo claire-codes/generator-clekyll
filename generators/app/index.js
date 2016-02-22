@@ -26,6 +26,18 @@ module.exports = yeoman.Base.extend({
       type: 'confirm',
       name: 'comments',
       message: 'Enable comments?'
+    }, {
+      type: 'confirm',
+      name: 'addCategory',
+      message: 'Add category?'
+    }, {
+      type: 'input',
+      name: 'category',
+      message: 'What category?',
+      default: '',
+      when: function(answers) {
+        return answers.addCategory === true;
+      }
     }];
 
     this.prompt(prompts, function (props) {
@@ -43,7 +55,8 @@ module.exports = yeoman.Base.extend({
         postTitle: this.props.postTitle,
         postDateTime: postDateTime,
         published: !(this.props.published),
-        comments: this.props.comments
+        comments: this.props.comments,
+        category: this.props.category
       }
     );
   },

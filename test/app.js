@@ -1,12 +1,48 @@
 'use strict';
+
 var path = require('path');
 var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
 
-describe('generator-clekyll:app', function() {
+describe('no categories added', function() {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/app'))
-      .withPrompts({postTitle: 'Bananas and Cucumbers', published: true, comments: true})
+      .withPrompts({
+        postTitle: 'Bananas and Cucumbers',
+        published: true,
+        comments: true,
+        categories: false
+      })
+      .on('end', done);
+  });
+
+  it('creates a file with expected yaml', function() {
+    var d = (new Date()).toISOString().slice(0, 10);
+    assert.file([
+      d + '-bananas-and-cucumbers.markdown'
+    ]);
+    assert.fileContent(d + '-bananas-and-cucumbers.markdown',
+      /---\nlayout: post\ntitle: Bananas and Cucumbers\ndate: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\ncomments: true\npublished: false\ncategories:\n- \n---\n/
+    );
+  });
+
+  it('does yo-rc.json stuff', function() {
+    assert.file([
+      '.yo-rc.json'
+    ]);
+  });
+});
+
+describe('with category added', function() {
+  before(function (done) {
+    helpers.run(path.join(__dirname, '../generators/app'))
+      .withPrompts({
+        postTitle: 'Bananas and Cucumbers',
+        published: true,
+        comments: true,
+        categories: true,
+        category: 'fruits'
+      })
       .on('end', done);
   });
 
@@ -16,13 +52,7 @@ describe('generator-clekyll:app', function() {
       d + '-bananas-and-cucumbers.markdown'
     ]);
     assert.fileContent(d + '-bananas-and-cucumbers.markdown',
-      /---\nlayout: post\ntitle: Bananas and Cucumbers\ndate: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\ncomments: true\npublished: false\ncategories:\n---\n/
+      /---\nlayout: post\ntitle: Bananas and Cucumbers\ndate: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\ncomments: true\npublished: false\ncategories:\n- fruits\n---\n/
     );
-  });
-
-  it('does yo-rc.json stuff', function() {
-    assert.file([
-      '.yo-rc.json'
-    ]);
   });
 });
