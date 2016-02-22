@@ -18,6 +18,7 @@ date: 2016-02-12 23:17:42
 comments: true
 published: false
 categories:
+-
 ---
 
 # Your blog post goes here
@@ -38,7 +39,13 @@ yo clekyll
 
 It will create the file in the current directory.
 
-*To-Do:* Check for `yo-rc.json` existence and create in `/_posts` if it exists.
+You can add a category to the post. If you choose not to add one, a blank category will appear. That's fine, Jekyll doesn't mind. You can manually add more than one category if you like, Jekyll doesn't mind that either.
+
+*To-Do:* (1) Check for `yo-rc.json` existence and create in `/_posts` if it exists. (2) Allow adding more than one category.
+
+## N.B.
+
+Jekyll might get in a but of a tizz if you have a node_modules folder within the project structure - delete it and/or install generators somewhere other than within the Jekyll project.
 
 ## Getting To Know Yeoman
 
