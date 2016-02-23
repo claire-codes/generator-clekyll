@@ -4,6 +4,8 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 var c = require('clairity');
+// require('babel/polyfill');
+var x = require('clairex/lib/clairex');
 
 module.exports = yeoman.Base.extend({
   prompting: function () {
@@ -70,6 +72,7 @@ module.exports = yeoman.Base.extend({
   },
 
   _toUrl: function (str) {
-    return this._getPostDate() + '-' + c.replaceWhitespace(str, '-').toLowerCase() + '.markdown';
+    // return this._getPostDate() + '-' + c.replaceWhitespace(str, '-').toLowerCase() + '.markdown';
+    return this._getPostDate() + '-' + x.toUrl(str) + '.markdown';
   }
 });

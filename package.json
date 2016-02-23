@@ -19,12 +19,12 @@
   ],
   "dependencies": {
     "chalk": "^1.0.0",
+    "clairex": "0.0.2",
     "clairity": "^0.3.0",
     "yeoman-generator": "^0.22.5",
     "yosay": "^1.0.2"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
     "coveralls": "^2.11.6",
     "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
