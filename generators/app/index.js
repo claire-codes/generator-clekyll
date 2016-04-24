@@ -3,7 +3,7 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
-var x = require('clairex');
+var x = require('clairex').clairex;
 
 module.exports = yeoman.Base.extend({
   prompting: function () {
