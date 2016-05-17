@@ -1,6 +1,7 @@
 ---
 layout: post
 title: <%= postTitle %>
+summary: <%= postSummary %>
 date: <%= postDateTime %>
 comments: <%= comments %>
 published: <%= published %>

@@ -19,6 +19,10 @@ module.exports = yeoman.Base.extend({
       name: 'postTitle',
       message: 'What\'s the title of the post?'
     }, {
+      type: 'input',
+      name: 'postSummary',
+      message: 'Type a short summary of your post'
+    }, {
       type: 'confirm',
       name: 'published',
       message: 'Only a draft?'
@@ -53,6 +57,7 @@ module.exports = yeoman.Base.extend({
       this.destinationPath(this._toUrl(this.props.postTitle)),
       {
         postTitle: this.props.postTitle,
+        postSummary: this.props.postSummary,
         postDateTime: postDateTime,
         published: !(this.props.published),
         comments: this.props.comments,

@@ -9,6 +9,7 @@ describe('no categories added', function() {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         postTitle: 'Bananas and Cucumbers',
+        postSummary: 'Fruits and vegetables',
         published: true,
         comments: true,
         categories: false
@@ -22,7 +23,7 @@ describe('no categories added', function() {
       d + '-bananas-and-cucumbers.markdown'
     ]);
     assert.fileContent(d + '-bananas-and-cucumbers.markdown',
-      /---\nlayout: post\ntitle: Bananas and Cucumbers\ndate: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\ncomments: true\npublished: false\ncategories:\n- \n---\n/
+      /---\nlayout: post\ntitle: Bananas and Cucumbers\nsummary: Fruits and vegetables\ndate: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\ncomments: true\npublished: false\ncategories:\n- \n---\n/
     );
   });
 
@@ -38,6 +39,7 @@ describe('with category added', function() {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         postTitle: 'Bananas and Cucumbers',
+        postSummary: '',
         published: true,
         comments: true,
         categories: true,
@@ -52,7 +54,7 @@ describe('with category added', function() {
       d + '-bananas-and-cucumbers.markdown'
     ]);
     assert.fileContent(d + '-bananas-and-cucumbers.markdown',
-      /---\nlayout: post\ntitle: Bananas and Cucumbers\ndate: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\ncomments: true\npublished: false\ncategories:\n- fruits\n---\n/
+      /---\nlayout: post\ntitle: Bananas and Cucumbers\nsummary: \ndate: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\ncomments: true\npublished: false\ncategories:\n- fruits\n---\n/
     );
   });
 });
