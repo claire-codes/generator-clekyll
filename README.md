@@ -14,6 +14,7 @@ Filename: `2016-02-12-bish-bash-bosh.markdown`
 ---
 layout: post
 title: Bish Bash Bosh
+summary: A blog post about tea.
 date: 2016-02-12 23:17:42
 comments: true
 published: false
@@ -46,6 +47,12 @@ You can add a category to the post. If you choose not to add one, a blank catego
 ## N.B.
 
 Jekyll might get in a but of a tizz if you have a node_modules folder within the project structure - delete it and/or install generators somewhere other than within the Jekyll project.
+
+## Testing
+
+After cloning the repo locally, install the dependencies with `npm i` then run the tests with the command `npm test`.
+
+If you want to take the generator for a test drive, first run `npm link` then call the generator as you normally would, i.e. `yo clekyll`.
 
 ## Getting To Know Yeoman
 
