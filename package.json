@@ -24,7 +24,7 @@
     "yosay": "^1.0.2"
   },
   "devDependencies": {
-    "coveralls": "^2.11.6",
+    "coveralls": "^2.11.12",
     "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
     "yeoman-assert": "^2.0.0",
